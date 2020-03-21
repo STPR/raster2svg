@@ -1,5 +1,5 @@
 /*
- * raster2svg 1.0.1
+ * raster2svg 1.0.2
  * https://github.com/STPR/raster2svg
  *
  * Copyright (c) 2020, STPR - https://github.com/STPR
@@ -106,7 +106,7 @@ fn main() -> Result<(), std::io::Error> {
     }
     writeln!(fsvg, "</svg>")?;
 
-    println!("raster2svg 1.0.1\nCopyright (c) 2020, STPR - https://github.com/STPR\nFor more information, please visit https://crates.io/crates/raster2svg\n");
+    println!("raster2svg 1.0.2\nCopyright (c) 2020, STPR - https://github.com/STPR\nFor more information, please visit https://crates.io/crates/raster2svg\n");
     println!("Size: {} x {}\nNumber of colors: {}\nDone.", raster_x, raster_y, number_of_colors);
     Ok(())
 }

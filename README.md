@@ -1,6 +1,6 @@
-# raster2svg [![Package][package-img]][package-url]
+# raster2svg [![crates.io][cratesio-img]][cratesio-url]
 
-A tool that use the contour_tracing library [![Library][libpackage-img]][libpackage-url]
+A tool that use the contour_tracing library [![Package][package-img]][package-url]
 
 ## Features
 
@@ -9,23 +9,23 @@ A tool that use the contour_tracing library [![Library][libpackage-img]][libpack
 - Input format: a raster image file
 - Output format: an SVG file
 
-Features from the contour_tracing library: [![Library][libpackage-img]][libpackage-url]
+Features from the contour_tracing library: [![Package][package-img]][package-url]
 - Trace contours using the Theo Pavlidis' algorithm (connectivity: 4-connected)
 - Trace **outlines** in **clockwise direction**
 - Trace **holes** in **counterclockwise direction**
 
 ## Options
 ```
-   -s, --size          Add the size of the raster image
-   -d, --ids           Add the RGB colors and opacity values as id attributes
-   -k, --inkscape      Add some Inkscape attributes (transparent background, pixel units, ...)
-   -r, --rendering     Set the shape-rendering attribute at crispEdges
-   -c, --closepaths    Close the paths with the SVG Path Z command
-   -h, --help          Prints help information
-   -V, --version       Prints version information
+ -s, --size          Add the size of the raster image
+ -d, --ids           Add the RGB colors and opacity values as id attributes
+ -k, --inkscape      Add some Inkscape attributes (transparent background, pixel units, ...)
+ -r, --rendering     Set the shape-rendering attribute at crispEdges
+ -c, --closepaths    Close the paths with the SVG Path Z command
+ -h, --help          Prints help information
+ -V, --version       Prints version information
 
-   -i, --input <INPUT>      Input raster image filename (e.g. input.png)
-   -o, --output <OUTPUT>    Output SVG filename (e.g. output.svg)
+ -i, --input <INPUT>      Input raster image filename (e.g. input.png)
+ -o, --output <OUTPUT>    Output SVG filename (e.g. output.svg)
 ```
 ## Example
 
@@ -37,17 +37,8 @@ rust_output.svg: [![rust_output.svg][rust-output-img]][rust-output-url] (click o
 
 ## Informations
 
-- **Be carefull with the size and complexity of your input image because the SVG file size grow rapidly...**
+- **Be careful with the size and complexity of your input image because the SVG file size grow rapidly...**
 - An already compiled executable is available for Windows on GitHub: [https://github.com/STPR/raster2svg/releases](https://github.com/STPR/raster2svg/releases)
-
-[package-img]: https://img.shields.io/crates/v/raster2svg.svg
-[package-url]: https://crates.io/crates/raster2svg
-[libpackage-img]: https://img.shields.io/crates/v/contour_tracing.svg
-[libpackage-url]: https://crates.io/crates/contour_tracing
-[rust-input-img]: https://github.com/STPR/raster2svg/raw/master/example/rust_input.png
-[rust-input-url]: https://github.com/STPR/raster2svg/raw/master/example/rust_input.png
-[rust-output-img]: https://github.com/STPR/raster2svg/raw/master/example/rust_output.svg?sanitize=true
-[rust-output-url]: https://github.com/STPR/raster2svg/raw/master/example/rust_output.svg
 
 ## License
 
@@ -64,9 +55,11 @@ Your contribution is highly appreciated. Do not hesitate to open an issue or a
 pull request. Note that any contribution submitted for inclusion in the project
 will be licensed according to the terms given in [LICENSE.txt](LICENSE.txt).
 
-[libpackage-img]: https://img.shields.io/crates/v/contour_tracing.svg
-[libpackage-url]: https://crates.io/crates/contour_tracing
+[cratesio-img]: https://img.shields.io/crates/v/raster2svg.svg
+[cratesio-url]: https://crates.io/crates/raster2svg
+[package-img]: https://img.shields.io/crates/v/contour_tracing.svg
+[package-url]: https://crates.io/crates/contour_tracing
 [rust-input-img]: https://github.com/STPR/raster2svg/raw/master/example/rust_input.png
 [rust-input-url]: https://github.com/STPR/raster2svg/raw/master/example/rust_input.png
-[rust-output-img]: https://github.com/STPR/raster2svg/raw/master/example/rust_output.svg
+[rust-output-img]: https://github.com/STPR/raster2svg/raw/master/example/rust_output.svg?sanitize=true
 [rust-output-url]: https://github.com/STPR/raster2svg/raw/master/example/rust_output.svg
