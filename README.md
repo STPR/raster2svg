@@ -62,4 +62,4 @@ will be licensed according to the terms given in [LICENSE.txt](LICENSE.txt).
 [rust-input-img]: https://github.com/STPR/raster2svg/raw/master/example/rust_input.png
 [rust-input-url]: https://github.com/STPR/raster2svg/raw/master/example/rust_input.png
 [rust-output-img]: https://github.com/STPR/raster2svg/raw/master/example/rust_output.svg?sanitize=true
-[rust-output-url]: view-source:https://github.com/STPR/raster2svg/raw/master/example/rust_output.svg
+[rust-output-url]: https://github.com/STPR/raster2svg/raw/master/example/rust_output.svg
