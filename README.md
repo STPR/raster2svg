@@ -30,9 +30,9 @@ Features from the contour_tracing library: [![Package][package-img]][package-url
 ## Example
 
 rust_input.png: [![rust_input.png][rust-input-img]][rust-input-url]
-
-`C:\>raster2svg.exe -s -d -k -r -i rust_input.png -o rust_output.svg`
-
+```
+C:\>raster2svg.exe -s -d -k -r -i rust_input.png -o rust_output.svg
+```
 rust_output.svg: [![rust_output.svg][rust-output-img]][rust-output-url] (click on it to view the source)
 
 ## Informations
@@ -62,4 +62,4 @@ will be licensed according to the terms given in [LICENSE.txt](LICENSE.txt).
 [rust-input-img]: https://github.com/STPR/raster2svg/raw/master/example/rust_input.png
 [rust-input-url]: https://github.com/STPR/raster2svg/raw/master/example/rust_input.png
 [rust-output-img]: https://github.com/STPR/raster2svg/raw/master/example/rust_output.svg?sanitize=true
-[rust-output-url]: https://github.com/STPR/raster2svg/raw/master/example/rust_output.svg
+[rust-output-url]: view-source:https://github.com/STPR/raster2svg/raw/master/example/rust_output.svg
