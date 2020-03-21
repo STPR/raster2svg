@@ -1,4 +1,4 @@
-# raster2svg [![Package][package-img]][package-url] [![Documentation][documentation-img]][documentation-url]
+# raster2svg [![Package][package-img]][package-url]
 
 A tool that use the contour_tracing library [![Package][libpackage-img]][libpackage-url]
 
@@ -40,6 +40,8 @@ rust_output.svg: [![rust_output.svg][rust-output-img]][rust-output-url] (click o
 - **Be carefull with the size and complexity of your input image because the SVG file size grow rapidly...**
 - An already compiled executable is available for Windows on GitHub: [https://github.com/STPR/raster2svg/releases](https://github.com/STPR/raster2svg/releases)
 
+[package-img]: https://img.shields.io/crates/v/raster2svg.svg
+[package-url]: https://crates.io/crates/raster2svg
 [libpackage-img]: https://img.shields.io/crates/v/contour_tracing.svg
 [libpackage-url]: https://crates.io/crates/contour_tracing
 [rust-input-img]: https://github.com/STPR/raster2svg/raw/master/example/rust_input.png
