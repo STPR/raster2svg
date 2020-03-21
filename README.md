@@ -1,6 +1,6 @@
 # raster2svg [![Package][package-img]][package-url]
 
-A tool that use the contour_tracing library [![Package][libpackage-img]][libpackage-url]
+A tool that use the contour_tracing library [![Library][libpackage-img]][libpackage-url]
 
 ## Features
 
@@ -9,7 +9,7 @@ A tool that use the contour_tracing library [![Package][libpackage-img]][libpack
 - Input format: a raster image file
 - Output format: an SVG file
 
-Features from the contour_tracing library: [![Package][libpackage-img]][libpackage-url]
+Features from the contour_tracing library: [![Library][libpackage-img]][libpackage-url]
 - Trace contours using the Theo Pavlidis' algorithm (connectivity: 4-connected)
 - Trace **outlines** in **clockwise direction**
 - Trace **holes** in **counterclockwise direction**

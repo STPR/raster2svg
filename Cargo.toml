@@ -1,6 +1,6 @@
 [package]
 name = "raster2svg"
-version = "1.0.0"
+version = "1.0.1"
 authors = ["STPR"]
 edition = "2018"
 description = "A tool that use the contour_tracing library."
