@@ -37,7 +37,7 @@ rust_output.svg: [![rust_output.svg][rust-output-img]][rust-output-url] (click o
 
 ## Informations
 
-- **Be careful with the size and complexity of your input image because the SVG file size increases very quickly...**
+- **Be careful with the size and complexity of your input image because the SVG file size grow rapidly...**
 - An already compiled executable is available for Windows on GitHub: [https://github.com/STPR/raster2svg/releases](https://github.com/STPR/raster2svg/releases)
 
 ## License
