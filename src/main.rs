@@ -40,7 +40,7 @@
 //! 
 //! `C:\>raster2svg.exe -s -d -k -r -i rust_input.png -o rust_output.svg`
 //! 
-//! rust_output.svg: [![rust_output.png][rust-output-img]][rust-output-url]
+//! rust_output.svg: [![rust_output.svg][rust-output-img]][rust-output-url] (click on it to view the source)
 //! 
 //! # Informations
 //!
@@ -51,7 +51,7 @@
 //! [libpackage-url]: https://crates.io/crates/contour_tracing
 //! [rust-input-img]: https://github.com/STPR/raster2svg/raw/master/example/rust_input.png
 //! [rust-input-url]: https://github.com/STPR/raster2svg/raw/master/example/rust_input.png
-//! [rust-output-img]: https://github.com/STPR/raster2svg/raw/master/example/rust_output.svg
+//! [rust-output-img]: https://github.com/STPR/raster2svg/raw/master/example/rust_output.svg?sanitize=true
 //! [rust-output-url]: https://github.com/STPR/raster2svg/raw/master/example/rust_output.svg
 
 extern crate clap;
