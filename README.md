@@ -26,25 +26,25 @@ Features from the contour_tracing library: [![Package][package-img]][package-url
     -i, --input <INPUT>     Input raster image filename (e.g. input.png)
     -o, --output <OUTPUT>   Output SVG filename (e.g. output.svg)
 ```
-## Examples
-
-- Example with some transparent colors:
+## Example with some transparent colors:
 
 ```
 C:\>raster2svg.exe -s -d -k -r -i rust_input.png -o rust_output.svg
 ```
-rust_input.png: [![rust_input.png][rust-input-img]][rust-input-url]
+- rust_input.png: [![rust_input.png][rust-input-img]][rust-input-url]
 
-rust_output.svg: [![rust_output.svg][rust-output-img]][rust-output-url] (click on it to view the source)
+- rust_output.svg: [![rust_output.svg][rust-output-img]][rust-output-url] (click on it to view the source)
 
-- Example of a zoom by 800%: [Thanks Nayuki for your QR Code generator](https://www.nayuki.io/page/qr-code-generator-library)
+## Example of a zoom by 800%:
+
+[Thanks Nayuki for your QR Code generator](https://www.nayuki.io/page/qr-code-generator-library)
 
 ```
 C:\>raster2svg.exe -s -z 800 -k -r -i qrcode_input.png -o qrcode_output.svg
 ```
-qrcode_input.png: [![qrcode_input.png][qrcode-input-img]][qrcode-input-url]
+- qrcode_input.png: [![qrcode_input.png][qrcode-input-img]][qrcode-input-url]
 
-qrcode_output.svg: [![qrcode_output.svg][qrcode-output-img]][qrcode-output-url] (click on it to view the source)
+- qrcode_output.svg: [![qrcode_output.svg][qrcode-output-img]][qrcode-output-url] (click on it to view the source)
 
 ## Informations
 
