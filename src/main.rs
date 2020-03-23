@@ -1,5 +1,5 @@
 /*
- * raster2svg 1.0.2
+ * raster2svg 1.0.3
  * https://github.com/STPR/raster2svg
  *
  * Copyright (c) 2020, STPR - https://github.com/STPR
@@ -24,6 +24,18 @@ fn main() -> Result<(), std::io::Error> {
     let m = App::from_yaml(cli_yaml).setting(AppSettings::ArgRequiredElseHelp).get_matches();
 
     let size: bool = m.is_present("size");
+    let zoom: u32;
+    if m.is_present("PERCENT") {
+        zoom = match m.value_of("PERCENT") {
+            Some(zoom) => zoom.parse().unwrap_or(100),
+            None => {
+                println!("{}", m.usage());
+                process::exit(1);
+            }
+        };
+    } else {
+        zoom = 100;
+    }
     let ids: bool = m.is_present("ids");
     let inkscape: bool = m.is_present("inkscape");
     let rendering: bool = m.is_present("rendering");
@@ -45,10 +57,19 @@ fn main() -> Result<(), std::io::Error> {
 
     let raster = image::open(input).expect("Error while opening the raster image file !");
     let (raster_x, raster_y) = raster.dimensions();
+    let zoomed_x: u32;
+    let zoomed_y: u32;
+    if m.is_present("PERCENT") {
+        zoomed_x = (raster_x as f64 * (zoom as f64 / 100.0)).round() as u32;
+        zoomed_y = (raster_y as f64 * (zoom as f64 / 100.0)).round() as u32;
+    } else {
+        zoomed_x = raster_x;
+        zoomed_y = raster_y;
+    }
 
     let mut fsvg = File::create(output)?;
     write!(fsvg, "<svg xmlns=\"http://www.w3.org/2000/svg\"")?;
-    if size { write!(fsvg, " width=\"{}\" height=\"{}\"", raster_x, raster_y)?; }
+    if size { write!(fsvg, " width=\"{}\" height=\"{}\" viewBox=\"0 0 {} {}\"", zoomed_x, zoomed_y, raster_x, raster_y)?; }
     if rendering { write!(fsvg, " shape-rendering=\"crispEdges\"")?; }
     if inkscape { write!(fsvg, " xmlns:sodipodi=\"http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd\" xmlns:inkscape=\"http://www.inkscape.org/namespaces/inkscape\"")?; }
     write!(fsvg, ">\n")?;
@@ -104,7 +125,11 @@ fn main() -> Result<(), std::io::Error> {
     }
     writeln!(fsvg, "</svg>")?;
 
-    println!("raster2svg 1.0.2\nCopyright (c) 2020, STPR - https://github.com/STPR\nFor more information, please visit https://crates.io/crates/raster2svg\n");
-    println!("Size: {} x {}\nNumber of colors: {}\nDone.", raster_x, raster_y, number_of_colors);
+    println!("raster2svg 1.0.3\nCopyright (c) 2020, STPR - https://github.com/STPR\nFor more information, please visit https://crates.io/crates/raster2svg\n");
+    println!("Input size: {} x {}", raster_x, raster_y);
+    if m.is_present("PERCENT") {
+        println!("Zoom: {} %\nZoomed size: {} x {}", zoom, zoomed_x, zoomed_y);
+    }
+    println!("Number of colors: {}\n\nDone.", number_of_colors);
     Ok(())
 }

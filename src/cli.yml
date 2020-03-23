@@ -1,5 +1,5 @@
 name: raster2svg
-version: "1.0.2"
+version: "1.0.3"
 author: "Copyright (c) 2020, STPR - https://github.com/STPR"
 about: "For more information, please visit https://crates.io/crates/raster2svg"
 args:
@@ -7,36 +7,44 @@ args:
         display_order: 1
         short: s
         long: size
-        help: "Add the size of the raster image"
-    - ids:
+        help: "Add the width, height and viewBox attributes"
+    - PERCENT:
         display_order: 2
+        short: z
+        long: zoom
+        help: "Multiply the width and height attributes by a given percent (e.g. 250)"
+        takes_value: true
+        requires:
+            - size
+    - ids:
+        display_order: 3
         short: d
         long: ids
         help: "Add the RGB colors and opacity values as id attributes"
     - inkscape:
-        display_order: 3
+        display_order: 4
         short: k
         long: inkscape
-        help: "Add some Inkscape attributes (transparent background, pixel units, ...)"
+        help: "Add some Inkscape attributes (transparent background, pixel units, grid, snapping, ...)"
     - rendering:
-        display_order: 4
+        display_order: 5
         short: r
         long: rendering
         help: "Set the shape-rendering attribute at crispEdges"
     - closepaths:
-        display_order: 5
+        display_order: 6
         short: c
         long: closepaths
         help: "Close the paths with the SVG Path Z command"
     - INPUT:
-        display_order: 6
+        display_order: 7
         short: i
         long: input
         help: "Input raster image filename (e.g. input.png)"
         required: true
         takes_value: true
     - OUTPUT:
-        display_order: 7
+        display_order: 8
         short: o
         long: output
         help: "Output SVG filename (e.g. output.svg)"

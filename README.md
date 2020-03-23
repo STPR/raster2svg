@@ -16,28 +16,35 @@ Features from the contour_tracing library: [![Package][package-img]][package-url
 
 ## Options
 ```
- -s, --size          Add the size of the raster image
- -d, --ids           Add the RGB colors and opacity values as id attributes
- -k, --inkscape      Add some Inkscape attributes (transparent background, pixel units, ...)
- -r, --rendering     Set the shape-rendering attribute at crispEdges
- -c, --closepaths    Close the paths with the SVG Path Z command
- -h, --help          Prints help information
- -V, --version       Prints version information
+    -s, --size              Add the width, height and viewBox attributes
+    -d, --ids               Add the RGB colors and opacity values as id attributes
+    -k, --inkscape          Add some Inkscape attributes (transparent background, pixel units, grid, snapping, ...)
+    -r, --rendering         Set the shape-rendering attribute at crispEdges
+    -c, --closepaths        Close the paths with the SVG Path Z command
 
- -i, --input <INPUT>      Input raster image filename (e.g. input.png)
- -o, --output <OUTPUT>    Output SVG filename (e.g. output.svg)
+    -z, --zoom <PERCENT>    Multiply the width and height attributes by a given percent (e.g. 250)
+    -i, --input <INPUT>     Input raster image filename (e.g. input.png)
+    -o, --output <OUTPUT>   Output SVG filename (e.g. output.svg)
 ```
-## Example
+## Examples
 
+- Example with some transparent colors:
 rust_input.png: [![rust_input.png][rust-input-img]][rust-input-url]
 ```
 C:\>raster2svg.exe -s -d -k -r -i rust_input.png -o rust_output.svg
 ```
 rust_output.svg: [![rust_output.svg][rust-output-img]][rust-output-url] (click on it to view the source)
 
+- Example of a zoom by 800%: [Thanks Nayuki for your QR Code generator](https://www.nayuki.io/page/qr-code-generator-library)
+qrcode_input.png: [![qrcode_input.png][qrcode-input-img]][qrcode-input-url]
+```
+C:\>raster2svg.exe -s -z 800 -k -r -i qrcode_input.png -o qrcode_output.svg
+```
+qrcode_output.svg: [![qrcode_output.svg][qrcode-output-img]][qrcode-output-url] (click on it to view the source)
+
 ## Informations
 
-- **Be careful with the size and complexity of your input image because the SVG file size grow rapidly...**
+- **Be careful with the size and complexity of your input image because the SVG file size grows rapidly...**
 - An already compiled executable is available for Windows on GitHub: [https://github.com/STPR/raster2svg/releases](https://github.com/STPR/raster2svg/releases)
 
 ## License
@@ -59,6 +66,10 @@ will be licensed according to the terms given in [LICENSE.txt](LICENSE.txt).
 [cratesio-url]: https://crates.io/crates/raster2svg
 [package-img]: https://img.shields.io/crates/v/contour_tracing.svg
 [package-url]: https://crates.io/crates/contour_tracing
+[qrcode-input-img]: https://github.com/STPR/raster2svg/raw/master/example/qrcode_input.png
+[qrcode-input-url]: https://github.com/STPR/raster2svg/raw/master/example/qrcode_input.png
+[qrcode-output-img]: https://github.com/STPR/raster2svg/raw/master/example/qrcode_output.svg?sanitize=true
+[qrcode-output-url]: https://github.com/STPR/raster2svg/raw/master/example/qrcode_output.svg
 [rust-input-img]: https://github.com/STPR/raster2svg/raw/master/example/rust_input.png
 [rust-input-url]: https://github.com/STPR/raster2svg/raw/master/example/rust_input.png
 [rust-output-img]: https://github.com/STPR/raster2svg/raw/master/example/rust_output.svg?sanitize=true
