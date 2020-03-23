@@ -26,7 +26,7 @@ Features from the contour_tracing library: [![Package][package-img]][package-url
     -i, --input <INPUT>     Input raster image filename (e.g. input.png)
     -o, --output <OUTPUT>   Output SVG filename (e.g. output.svg)
 ```
-## Example with some transparent colors:
+## An example with some transparent colors
 
 ```
 C:\>raster2svg.exe -s -d -k -r -i rust_input.png -o rust_output.svg
@@ -35,9 +35,9 @@ C:\>raster2svg.exe -s -d -k -r -i rust_input.png -o rust_output.svg
 
 - rust_output.svg: [![rust_output.svg][rust-output-img]][rust-output-url] (click on it to view the source)
 
-## Example of a zoom by 800%:
+## An example of a zoom by 800%
 
-[Thanks Nayuki for your QR Code generator](https://www.nayuki.io/page/qr-code-generator-library)
+[(Thanks Nayuki for your QR Code generator)](https://www.nayuki.io/page/qr-code-generator-library)
 
 ```
 C:\>raster2svg.exe -s -z 800 -k -r -i qrcode_input.png -o qrcode_output.svg
