@@ -29,6 +29,7 @@ Features from the contour_tracing library: [![Package][package-img]][package-url
 ## Examples
 
 - Example with some transparent colors:
+
 rust_input.png: [![rust_input.png][rust-input-img]][rust-input-url]
 ```
 C:\>raster2svg.exe -s -d -k -r -i rust_input.png -o rust_output.svg
@@ -36,6 +37,7 @@ C:\>raster2svg.exe -s -d -k -r -i rust_input.png -o rust_output.svg
 rust_output.svg: [![rust_output.svg][rust-output-img]][rust-output-url] (click on it to view the source)
 
 - Example of a zoom by 800%: [Thanks Nayuki for your QR Code generator](https://www.nayuki.io/page/qr-code-generator-library)
+
 qrcode_input.png: [![qrcode_input.png][qrcode-input-img]][qrcode-input-url]
 ```
 C:\>raster2svg.exe -s -z 800 -k -r -i qrcode_input.png -o qrcode_output.svg
