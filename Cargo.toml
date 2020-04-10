@@ -1,6 +1,6 @@
 [package]
 name = "raster2svg"
-version = "1.0.3"
+version = "1.0.4"
 authors = ["STPR"]
 edition = "2018"
 description = "A tool that use the contour_tracing library."
@@ -21,5 +21,5 @@ lto = true
 
 [dependencies]
 clap = {version = "2", features = ["yaml"]}
-image = "0.23.2"
+image = "0.23.3"
 contour_tracing = "1.0.0"

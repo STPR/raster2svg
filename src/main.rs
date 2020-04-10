@@ -1,5 +1,5 @@
 /*
- * raster2svg 1.0.3
+ * raster2svg 1.0.4
  * https://github.com/STPR/raster2svg
  *
  * Copyright (c) 2020, STPR - https://github.com/STPR
@@ -76,6 +76,7 @@ fn main() -> Result<(), std::io::Error> {
     if inkscape { writeln!(fsvg, "<sodipodi:namedview units=\"px\" inkscape:document-units=\"px\" inkscape:pagecheckerboard=\"true\" showborder=\"true\" borderlayer=\"true\" showgrid=\"true\" inkscape:showpageshadow=\"false\" inkscape:snap-global=\"true\" inkscape:snap-bbox=\"true\" inkscape:bbox-nodes=\"true\" inkscape:snap-nodes=\"false\" inkscape:snap-others=\"false\" inkscape:snap-grids=\"true\" inkscape:snap-to-guides=\"false\">\n\
                                   <inkscape:grid type=\"xygrid\" id=\"pixelgrid\" visible=\"false\" originx=\"0\" originy=\"0\" spacingx=\"1\" spacingy=\"1\" empspacing=\"1\" snapvisiblegridlinesonly=\"false\"/>\
                                   </sodipodi:namedview>")?; }
+
     // FIRST PHASE: Count and sort the colors from the most used to the less used
     let mut colors = BTreeMap::new(); // Use BTreeMap instead of HashMap to ensure the same arrangement each times (but slower)
     for p in raster.pixels() {
@@ -125,7 +126,7 @@ fn main() -> Result<(), std::io::Error> {
     }
     writeln!(fsvg, "</svg>")?;
 
-    println!("raster2svg 1.0.3\nCopyright (c) 2020, STPR - https://github.com/STPR\nFor more information, please visit https://crates.io/crates/raster2svg\n");
+    println!("raster2svg 1.0.4\nCopyright (c) 2020, STPR - https://github.com/STPR\nFor more information, please visit https://crates.io/crates/raster2svg\n");
     println!("Input size: {} x {}", raster_x, raster_y);
     if m.is_present("PERCENT") {
         println!("Zoom: {} %\nZoomed size: {} x {}", zoom, zoomed_x, zoomed_y);
