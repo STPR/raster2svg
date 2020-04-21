@@ -77,8 +77,8 @@ will be licensed according to the terms given in [LICENSE.txt](LICENSE.txt).
 [qrcode-input-img]: https://github.com/STPR/raster2svg/raw/master/example/qrcode_input.png
 [qrcode-input-url]: https://github.com/STPR/raster2svg/raw/master/example/qrcode_input.png
 [qrcode-output-img]: https://github.com/STPR/raster2svg/raw/master/example/qrcode_output.svg?sanitize=true
-[qrcode-output-url]: https://github.com/STPR/raster2svg/raw/master/example/qrcode_output.svg
+[qrcode-output-url]: https://github.com/STPR/raster2svg/raw/master/example/qrcode_output_source.txt
 [rust-input-img]: https://github.com/STPR/raster2svg/raw/master/example/rust_input.png
 [rust-input-url]: https://github.com/STPR/raster2svg/raw/master/example/rust_input.png
 [rust-output-img]: https://github.com/STPR/raster2svg/raw/master/example/rust_output.svg?sanitize=true
-[rust-output-url]: https://github.com/STPR/raster2svg/raw/master/example/rust_output.svg
+[rust-output-url]: https://github.com/STPR/raster2svg/raw/master/example/rust_output_source.txt

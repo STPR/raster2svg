@@ -1,5 +1,5 @@
 /*
- * raster2svg 1.0.4
+ * raster2svg 1.0.5
  * https://github.com/STPR/raster2svg
  *
  * Copyright (c) 2020, STPR - https://github.com/STPR
@@ -126,7 +126,7 @@ fn main() -> Result<(), std::io::Error> {
     }
     writeln!(fsvg, "</svg>")?;
 
-    println!("raster2svg 1.0.4\nCopyright (c) 2020, STPR - https://github.com/STPR\nFor more information, please visit https://crates.io/crates/raster2svg\n");
+    println!("raster2svg 1.0.5\nCopyright (c) 2020, STPR - https://github.com/STPR\nFor more information, please visit https://crates.io/crates/raster2svg\n");
     println!("Input size: {} x {}", raster_x, raster_y);
     if m.is_present("PERCENT") {
         println!("Zoom: {} %\nZoomed size: {} x {}", zoom, zoomed_x, zoomed_y);
