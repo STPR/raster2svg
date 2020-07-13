@@ -23,6 +23,7 @@ Features from the contour_tracing library: [![Package][package-img]][package-url
  -c, --closepaths        Close the paths with the SVG Path Z command
 
  -z, --zoom <PERCENT>    Multiply the width and height attributes by a given percent (e.g. 250)
+ -l, --color <COLOR>     Trace only one given color in hexadecimal notation RRGGBBAA (e.g. AABBCC00)
  -i, --input <INPUT>     Input raster image filename (e.g. input.png)
  -o, --output <OUTPUT>   Output SVG filename (e.g. output.svg)
 ```
