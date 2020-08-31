@@ -1,5 +1,5 @@
 /*
- * raster2svg 1.0.8
+ * raster2svg 1.0.9
  * https://github.com/STPR/raster2svg
  *
  * Copyright (c) 2020, STPR - https://github.com/STPR
@@ -23,7 +23,13 @@ fn string_to_color(string: &str) -> Option<image::Rgba<u8>> {
             return None;
         }
     }
-    unsafe { if string.chars().count() == 8 { return Some(Pixel::from_channels(u8::from_str_radix(string.get_unchecked(0..2), 16).unwrap(), u8::from_str_radix(string.get_unchecked(2..4), 16).unwrap(), u8::from_str_radix(string.get_unchecked(4..6), 16).unwrap(), u8::from_str_radix(string.get_unchecked(6..8), 16).unwrap())) } else { return None }; }
+    unsafe {
+        if string.chars().count() == 8 {
+            return Some(Pixel::from_channels(u8::from_str_radix(string.get_unchecked(0..2), 16).unwrap(), u8::from_str_radix(string.get_unchecked(2..4), 16).unwrap(), u8::from_str_radix(string.get_unchecked(4..6), 16).unwrap(), u8::from_str_radix(string.get_unchecked(6..8), 16).unwrap()))
+        } else {
+            return None
+        };
+    }
 }
 
 fn main() -> Result<(), std::io::Error> {
@@ -164,7 +170,7 @@ fn main() -> Result<(), std::io::Error> {
         }
     }
 
-    println!("raster2svg 1.0.8\nCopyright (c) 2020, STPR - https://github.com/STPR\nFor more information, please visit https://crates.io/crates/raster2svg\n");
+    println!("raster2svg 1.0.9\nCopyright (c) 2020, STPR - https://github.com/STPR\nFor more information, please visit https://crates.io/crates/raster2svg\n");
     println!("Input size: {} x {}", raster_x, raster_y);
     if m.is_present("PERCENT") {
         println!("Zoom: {} %\nZoomed size: {} x {}", zoom, zoomed_x, zoomed_y);

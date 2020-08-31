@@ -1,6 +1,6 @@
 [package]
 name = "raster2svg"
-version = "1.0.8"
+version = "1.0.9"
 authors = ["STPR"]
 edition = "2018"
 description = "A tool that use the contour_tracing library."
@@ -18,12 +18,14 @@ path = "src/main.rs"
 
 [profile.release]
 lto = true
+#panic = "abort"
+codegen-units = 1
 
 [dependencies]
-image = "0.23.7"
+image = "0.23.9"
 contour_tracing = "1.0.0"
 
 [dependencies.clap]
-version = "2.33.1"
+version = "2.33.3"
 default-features = false
 features = ["yaml"]
