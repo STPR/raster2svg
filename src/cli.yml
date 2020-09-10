@@ -1,5 +1,5 @@
 name: raster2svg
-version: "1.0.9"
+version: "1.0.10"
 author: "Copyright (c) 2020, STPR - https://github.com/STPR"
 about: "For more information, please visit https://crates.io/crates/raster2svg"
 args:
