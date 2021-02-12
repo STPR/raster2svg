@@ -19,7 +19,7 @@ Features from the contour_tracing library: [![Package][package-img]][package-url
  -s, --size              Add the width, height and viewBox attributes
  -d, --ids               Add the RGB colors and opacity values as id attributes
  -k, --inkscape          Add some Inkscape attributes (transparent background, pixel units, grid, snapping, ...)
- -r, --rendering         Set the shape-rendering attribute at crispEdges
+ -r, --rendering         Set the shape-rendering attribute to crispEdges
  -c, --closepaths        Close the paths with the SVG Path Z command
 
  -z, --zoom <PERCENT>    Multiply the width and height attributes by a given percent (e.g. 250)
@@ -61,7 +61,7 @@ C:\>raster2svg.exe -s -z 800 -k -r -i qrcode_input.png -o qrcode_output.svg
 raster2svg
 https://github.com/STPR/raster2svg
 
-Copyright (c) 2020, STPR - https://github.com/STPR
+Copyright (c) 2021, STPR - https://github.com/STPR
 
 SPDX-License-Identifier: EUPL-1.2
 
@@ -75,11 +75,11 @@ will be licensed according to the terms given in [LICENSE.txt](LICENSE.txt).
 [cratesio-url]: https://crates.io/crates/raster2svg
 [package-img]: https://img.shields.io/crates/v/contour_tracing.svg
 [package-url]: https://crates.io/crates/contour_tracing
-[qrcode-input-img]: https://github.com/STPR/raster2svg/raw/master/example/qrcode_input.png
-[qrcode-input-url]: https://github.com/STPR/raster2svg/raw/master/example/qrcode_input.png
-[qrcode-output-img]: https://github.com/STPR/raster2svg/raw/master/example/qrcode_output.svg?sanitize=true
-[qrcode-output-url]: https://github.com/STPR/raster2svg/raw/master/example/qrcode_output_source.txt
-[rust-input-img]: https://github.com/STPR/raster2svg/raw/master/example/rust_input.png
-[rust-input-url]: https://github.com/STPR/raster2svg/raw/master/example/rust_input.png
-[rust-output-img]: https://github.com/STPR/raster2svg/raw/master/example/rust_output.svg?sanitize=true
-[rust-output-url]: https://github.com/STPR/raster2svg/raw/master/example/rust_output_source.txt
+[qrcode-input-img]: https://github.com/STPR/raster2svg/raw/main/example/qrcode_input.png
+[qrcode-input-url]: https://github.com/STPR/raster2svg/raw/main/example/qrcode_input.png
+[qrcode-output-img]: https://github.com/STPR/raster2svg/raw/main/example/qrcode_output.svg?sanitize=true
+[qrcode-output-url]: https://github.com/STPR/raster2svg/raw/main/example/qrcode_output_source.txt
+[rust-input-img]: https://github.com/STPR/raster2svg/raw/main/example/rust_input.png
+[rust-input-url]: https://github.com/STPR/raster2svg/raw/main/example/rust_input.png
+[rust-output-img]: https://github.com/STPR/raster2svg/raw/main/example/rust_output.svg?sanitize=true
+[rust-output-url]: https://github.com/STPR/raster2svg/raw/main/example/rust_output_source.txt

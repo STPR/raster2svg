@@ -1,6 +1,6 @@
 name: raster2svg
-version: "1.0.10"
-author: "Copyright (c) 2020, STPR - https://github.com/STPR"
+version: "1.0.11"
+author: "Copyright (c) 2021, STPR - https://github.com/STPR"
 about: "For more information, please visit https://crates.io/crates/raster2svg"
 args:
     - size:
@@ -36,7 +36,7 @@ args:
         display_order: 6
         short: r
         long: rendering
-        help: "Set the shape-rendering attribute at crispEdges"
+        help: "Set the shape-rendering attribute to crispEdges"
     - closepaths:
         display_order: 7
         short: c
