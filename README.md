@@ -16,16 +16,18 @@ Features from the contour_tracing library: [![Package][package-img]][package-url
 
 ## Options
 ```
- -s, --size              Add the width, height and viewBox attributes
- -d, --ids               Add the RGB colors and opacity values as id attributes
- -k, --inkscape          Add some Inkscape attributes (transparent background, pixel units, grid, snapping, ...)
- -r, --rendering         Set the shape-rendering attribute to crispEdges
- -c, --closepaths        Close the paths with the SVG Path Z command
+ -s, --size                Add the width, height and viewBox attributes
+ -d, --ids                 Add the RGB colors and opacity values as id attributes
+ -k, --inkscape            Add some Inkscape attributes (transparent background, pixel units, grid, snapping, ...)
+ -r, --rendering           Set the shape-rendering attribute to crispEdges
+ -c, --closepaths          Close the paths with the SVG Path Z command
 
- -z, --zoom <PERCENT>    Multiply the width and height attributes by a given percent (e.g. 250)
- -l, --color <COLOR>     Trace only one given color in hexadecimal notation RRGGBBAA (e.g. AABBCC00)
- -i, --input <INPUT>     Input raster image filename (e.g. input.png)
- -o, --output <OUTPUT>   Output SVG filename (e.g. output.svg)
+ -z, --zoom <PERCENT>      Multiply the width and height attributes by a given percent (e.g. 250)
+ -l, --color <COLOR>       Trace only one given color in hex notation RRGGBBAA (e.g. 112233FF)
+ -a, --avcolor <AVCOLOR>   Avoid a given color in hex notation RRGGBBAA (e.g. 112233FF)
+ -b, --bgcolor <BGCOLOR>   Add a background rectangle with a given color in hex notation RRGGBBAA (e.g. 112233FF)
+ -i, --input <INPUT>       Input raster image filename (e.g. input.png)
+ -o, --output <OUTPUT>     Output SVG filename (e.g. output.svg)
 ```
 ## An example with some transparent colors
 
@@ -43,7 +45,7 @@ C:\>raster2svg.exe -s -d -k -r -i rust_input.png -o rust_output.svg
 [(Thanks Nayuki for your QR Code generator)](https://www.nayuki.io/page/qr-code-generator-library)
 
 ```
-C:\>raster2svg.exe -s -z 800 -k -r -i qrcode_input.png -o qrcode_output.svg
+C:\>raster2svg.exe -s -z 800 -k -r -l 000000ff -b ffffffff -i qrcode_input.png -o qrcode_output.svg
 ```
 - qrcode_input.png: [![qrcode_input.png][qrcode-input-img]][qrcode-input-url]
 

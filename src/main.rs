@@ -1,5 +1,5 @@
 /*
- * raster2svg 1.0.11
+ * raster2svg
  * https://github.com/STPR/raster2svg
  *
  * Copyright (c) 2021, STPR - https://github.com/STPR
@@ -63,6 +63,30 @@ fn main() -> Result<(), std::io::Error> {
     } else {
         color_rgba = Pixel::from_channels(0, 0, 0, 0);
     }
+    let avcolor_rgba: image::Rgba<u8>;
+    if m.is_present("AVCOLOR") {
+        avcolor_rgba = match string_to_color(m.value_of("AVCOLOR").unwrap()) {
+            Some(avcolor_rgba) => avcolor_rgba,
+            None => {
+                println!("{}", m.usage());
+                process::exit(1);
+            }
+        };
+    } else {
+        avcolor_rgba = Pixel::from_channels(0, 0, 0, 0);
+    }
+    let bgcolor_rgba: image::Rgba<u8>;
+    if m.is_present("BGCOLOR") {
+        bgcolor_rgba = match string_to_color(m.value_of("BGCOLOR").unwrap()) {
+            Some(bgcolor_rgba) => bgcolor_rgba,
+            None => {
+                println!("{}", m.usage());
+                process::exit(1);
+            }
+        };
+    } else {
+        bgcolor_rgba = Pixel::from_channels(0, 0, 0, 0);
+    }
     let ids: bool = m.is_present("ids");
     let inkscape: bool = m.is_present("inkscape");
     let rendering: bool = m.is_present("rendering");
@@ -107,9 +131,17 @@ fn main() -> Result<(), std::io::Error> {
         sorted_colors = vec![([color_rgba[0], color_rgba[1], color_rgba[2], color_rgba[3]], 1)];
     } else {
         let mut colors = BTreeMap::new(); // Use BTreeMap instead of HashMap to ensure the same arrangement each time (but slower)
-        for p in raster.pixels() {
-            if p.2[3] != 0 {
-                *colors.entry((p.2).0).or_insert(0) += 1;
+        if m.is_present("AVCOLOR") {
+            for p in raster.pixels() {
+                if !(p.2[3] == 0 || p.2 == avcolor_rgba) {
+                    *colors.entry((p.2).0).or_insert(0) += 1;
+                }
+            }
+        } else {
+            for p in raster.pixels() {
+                if p.2[3] != 0 {
+                    *colors.entry((p.2).0).or_insert(0) += 1;
+                }
             }
         }
         number_of_colors = colors.len();
@@ -132,6 +164,14 @@ fn main() -> Result<(), std::io::Error> {
                 header += &format!(r#"<inkscape:grid type="xygrid" id="pixelgrid" visible="false" originx="0" originy="0" spacingx="1" spacingy="1" empspacing="1" snapvisiblegridlinesonly="false"/></sodipodi:namedview>{}"#, "\n");
             }
             write!(fsvg, "{}", header)?;
+
+            if m.is_present("BGCOLOR") {
+                if bgcolor_rgba[3] == 255 {
+                    writeln!(fsvg, r#"<rect id="BACKGROUND" width="{}" height="{}" fill="rgb({},{},{})"/>"#, raster_x, raster_y, bgcolor_rgba[0], bgcolor_rgba[1], bgcolor_rgba[2])?;
+                } else {
+                    writeln!(fsvg, r#"<rect id="BACKGROUND" width="{}" height="{}" fill="rgb({},{},{})" opacity="{}"/>"#, raster_x, raster_y, bgcolor_rgba[0], bgcolor_rgba[1], bgcolor_rgba[2], OPACITY[bgcolor_rgba[3] as usize])?;
+                }
+            }
 
             for color in sorted_colors.into_iter() {
                 let red: u8 = color.0[0];
@@ -172,12 +212,12 @@ fn main() -> Result<(), std::io::Error> {
         }
     }
 
-    println!("raster2svg 1.0.11\nCopyright (c) 2021, STPR - https://github.com/STPR\nFor more information, please visit https://crates.io/crates/raster2svg\n");
+    println!("raster2svg 1.0.12\nCopyright (c) 2021, STPR - https://github.com/STPR\nFor more information, please visit https://crates.io/crates/raster2svg\n");
     println!("Input size: {} x {}", raster_x, raster_y);
     if m.is_present("PERCENT") {
         println!("Zoom: {} %\nZoomed size: {} x {}", zoom, zoomed_x, zoomed_y);
     }
-    println!("Number of colors found: {}\n", number_of_colors);
+    println!("Number of colors traced: {}\n", number_of_colors);
     if create_file { println!("Done.") } else { println!("No output file has been created...") };
     Ok(())
 }
