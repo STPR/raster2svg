@@ -63,7 +63,7 @@ C:\>raster2svg.exe -s -z 800 -k -r -l 000000ff -b ffffffff -i qrcode_input.png -
 raster2svg
 https://github.com/STPR/raster2svg
 
-Copyright (c) 2021, STPR - https://github.com/STPR
+Copyright (c) 2022, STPR - https://github.com/STPR
 
 SPDX-License-Identifier: EUPL-1.2
 
