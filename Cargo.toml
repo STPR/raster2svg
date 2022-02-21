@@ -1,6 +1,6 @@
 [package]
 name = "raster2svg"
-version = "1.0.13"
+version = "1.0.14"
 authors = ["STPR"]
 edition = "2021"
 rust-version = "1.58.1"
@@ -23,8 +23,8 @@ lto = true
 codegen-units = 1
 
 [dependencies]
-image = "0.24.0"
-contour_tracing = { version = "1.0.11", features = ["array"] }
+image = "0.24.1"
+contour_tracing = { version = "1.0.12", features = ["array"] }
 
 [dependencies.clap]
 version = "2.34.0"

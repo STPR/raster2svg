@@ -208,7 +208,7 @@ fn main() -> Result<(), std::io::Error> {
         }
     }
 
-    println!("raster2svg 1.0.13\nCopyright (c) 2022, STPR - https://github.com/STPR\nFor more information, please visit https://crates.io/crates/raster2svg\n");
+    println!("raster2svg 1.0.14\nCopyright (c) 2022, STPR - https://github.com/STPR\nFor more information, please visit https://crates.io/crates/raster2svg\n");
     println!("Input size: {} x {}", raster_x, raster_y);
     if m.is_present("PERCENT") {
         println!("Zoom: {} %\nZoomed size: {} x {}", zoom, zoomed_x, zoomed_y);
